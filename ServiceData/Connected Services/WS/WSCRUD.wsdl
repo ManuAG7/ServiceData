@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Entrada">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Matricula" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EntradaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EntradaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Salida">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Matricula" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SalidaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SalidaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="registar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="matricula" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amaterno" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="carrera" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cuatri" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="finicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ffin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="registarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="registarResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updatesql">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amaterno" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="carrera" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cuatri" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="finicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ffin" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="matricula" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updatesqlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updatesqlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Deletedatos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="matricula" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeletedatosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeletedatosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="EntradaSoapIn">
+    <wsdl:part name="parameters" element="tns:Entrada" />
+  </wsdl:message>
+  <wsdl:message name="EntradaSoapOut">
+    <wsdl:part name="parameters" element="tns:EntradaResponse" />
+  </wsdl:message>
+  <wsdl:message name="SalidaSoapIn">
+    <wsdl:part name="parameters" element="tns:Salida" />
+  </wsdl:message>
+  <wsdl:message name="SalidaSoapOut">
+    <wsdl:part name="parameters" element="tns:SalidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="registarSoapIn">
+    <wsdl:part name="parameters" element="tns:registar" />
+  </wsdl:message>
+  <wsdl:message name="registarSoapOut">
+    <wsdl:part name="parameters" element="tns:registarResponse" />
+  </wsdl:message>
+  <wsdl:message name="updatesqlSoapIn">
+    <wsdl:part name="parameters" element="tns:updatesql" />
+  </wsdl:message>
+  <wsdl:message name="updatesqlSoapOut">
+    <wsdl:part name="parameters" element="tns:updatesqlResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeletedatosSoapIn">
+    <wsdl:part name="parameters" element="tns:Deletedatos" />
+  </wsdl:message>
+  <wsdl:message name="DeletedatosSoapOut">
+    <wsdl:part name="parameters" element="tns:DeletedatosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSCRUDSoap">
+    <wsdl:operation name="Entrada">
+      <wsdl:input message="tns:EntradaSoapIn" />
+      <wsdl:output message="tns:EntradaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Salida">
+      <wsdl:input message="tns:SalidaSoapIn" />
+      <wsdl:output message="tns:SalidaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="registar">
+      <wsdl:input message="tns:registarSoapIn" />
+      <wsdl:output message="tns:registarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updatesql">
+      <wsdl:input message="tns:updatesqlSoapIn" />
+      <wsdl:output message="tns:updatesqlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Deletedatos">
+      <wsdl:input message="tns:DeletedatosSoapIn" />
+      <wsdl:output message="tns:DeletedatosSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSCRUDSoap" type="tns:WSCRUDSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Entrada">
+      <soap:operation soapAction="http://tempuri.org/Entrada" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Salida">
+      <soap:operation soapAction="http://tempuri.org/Salida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registar">
+      <soap:operation soapAction="http://tempuri.org/registar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatesql">
+      <soap:operation soapAction="http://tempuri.org/updatesql" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Deletedatos">
+      <soap:operation soapAction="http://tempuri.org/Deletedatos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSCRUDSoap12" type="tns:WSCRUDSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Entrada">
+      <soap12:operation soapAction="http://tempuri.org/Entrada" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Salida">
+      <soap12:operation soapAction="http://tempuri.org/Salida" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registar">
+      <soap12:operation soapAction="http://tempuri.org/registar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatesql">
+      <soap12:operation soapAction="http://tempuri.org/updatesql" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Deletedatos">
+      <soap12:operation soapAction="http://tempuri.org/Deletedatos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSCRUD">
+    <wsdl:port name="WSCRUDSoap" binding="tns:WSCRUDSoap">
+      <soap:address location="http://localhost/WSS/CrudDatos/WSCRUD.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSCRUDSoap12" binding="tns:WSCRUDSoap12">
+      <soap12:address location="http://localhost/WSS/CrudDatos/WSCRUD.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
